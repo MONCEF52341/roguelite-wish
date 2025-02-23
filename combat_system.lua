@@ -1,12 +1,28 @@
 local combat_system = {}
 
+-- Fonction pour afficher la barre de vie
+local function afficherBarreDeVie(vieActuelle, vieMaximale)
+  local proportion = math.floor(vieActuelle / vieMaximale * 10)
+  local barre = ""
+  for i = 1, 10 do
+    if i <= proportion then
+      barre = barre .. "█"
+    else
+      barre = barre .. " "
+    end
+  end
+  return "[" .. barre .. "]"
+end
+
 function combat_system.demarrerCombat(Player, ennemi)
   print("\n⚔️ Le combat commence contre " .. ennemi.nom .. " !")
   print("Ennemi HP: " .. ennemi.hp .. " | ATK: " .. ennemi.atk .. " | DEF: " .. ennemi.def)
 
   while Player.hp > 0 and ennemi.hp > 0 do
     -- === TOUR DU JOUEUR ===
-    print("\nVotre HP: " .. Player.hp .. " | Ennemi HP: " .. ennemi.hp)
+
+    print("\nVotre HP: " ..
+      afficherBarreDeVie(Player.hp, Player.max_hp) .. " | Ennemi HP: " .. afficherBarreDeVie(ennemi.hp, 16))
     print("Que voulez-vous faire ?")
     print("1. Attaquer")
     print("2. Utiliser la chance (tentative d'esquive ou coup critique)")

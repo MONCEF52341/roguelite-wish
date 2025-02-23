@@ -1,0 +1,4 @@
+Gobelin,15,5,2,10
+Orque,30,8,4,20
+Dragon,50,15,10,50
+Squelette,20,6,3,15

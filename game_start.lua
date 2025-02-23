@@ -6,6 +6,7 @@ function game_start.initPlayer()
   local Player = {
     name = "ogUser",
     hp = 20,
+    max_hp = 20,
     atk = 5,
     def = 5,
     luck = 5,
@@ -59,7 +60,6 @@ function game_start.initPlayer()
     Player.xp_multiplier = 1
     print("Mode Normal activé.")
   end
-
   return Player
 end
 
