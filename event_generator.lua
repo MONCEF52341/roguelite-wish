@@ -1,4 +1,5 @@
 local loot_generator = require("loot")
+local combat_system = require("combat_system")
 local event_generator = {}
 
 function event_generator.genererSalle(Player, salle_actuelle, salles_totales)
@@ -14,6 +15,14 @@ function event_generator.genererSalle(Player, salle_actuelle, salles_totales)
 
   if evenement <= 40 then
     print("👹 Un monstre surgit des ténèbres !")
+    local monstre = {
+      nom = "Gobelin",
+      hp = 2,
+      atk = math.random(4, 7),
+      def = math.random(2, 4),
+      xp = 80
+    }
+    combat_system.demarrerCombat(Player, monstre)
     return "monstre"
   elseif evenement <= 70 then
     print("🎁 Vous trouvez un coffre mystérieux.")

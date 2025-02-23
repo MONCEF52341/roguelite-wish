@@ -1,0 +1,30 @@
+[
+  {
+    "nom": "Gobelin",
+    "hp": 15,
+    "atk": 5,
+    "def": 2,
+    "xp": 10
+  },
+  {
+    "nom": "Orque",
+    "hp": 30,
+    "atk": 8,
+    "def": 4,
+    "xp": 20
+  },
+  {
+    "nom": "Dragon",
+    "hp": 50,
+    "atk": 15,
+    "def": 10,
+    "xp": 50
+  },
+  {
+    "nom": "Squelette",
+    "hp": 20,
+    "atk": 6,
+    "def": 3,
+    "xp": 15
+  }
+]
