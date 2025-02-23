@@ -1,3 +1,4 @@
+local loot_generator = require("loot")
 local event_generator = {}
 
 function event_generator.genererSalle(Player, salle_actuelle, salles_totales)
@@ -16,6 +17,7 @@ function event_generator.genererSalle(Player, salle_actuelle, salles_totales)
     return "monstre"
   elseif evenement <= 70 then
     print("🎁 Vous trouvez un coffre mystérieux.")
+    loot_generator.ouvrirCoffre(Player) -- Ouvre le coffre et gère le loot
     return "coffre"
   elseif evenement <= 90 then
     print("⚡ Un événement étrange se produit...")
